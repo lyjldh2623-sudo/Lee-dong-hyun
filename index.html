@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이동현 | 배드민턴 코치를 꿈꾸는 포트폴리오</title>
+<meta name="description" content="레저해양스포츠학과 이동현의 개인 포트폴리오">
+<style>
+:root{
+  --paper:#f4f7f6; --ink:#10283a; --muted:#52687a; --line:#cfdcd7;
+  --court:#0f6b57; --court-dark:#0a4d3f; --shuttle:#f2b632; --card:#ffffff;
+  --radius:14px;
+  --font:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.75;word-break:keep-all;-webkit-text-size-adjust:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--shuttle);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:20;background:rgba(244,247,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;text-decoration:none;letter-spacing:-.02em}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;font-size:.95rem;color:var(--muted);transition:background .2s,color .2s}
+nav a:hover{background:#e3ece8;color:var(--ink)}
+nav a.active{background:var(--ink);color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;width:20px;height:2px;background:currentColor;margin:5px auto;transition:transform .25s,opacity .25s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* hero */
+#home{min-height:100svh;display:flex;align-items:center;padding:100px 0 60px;position:relative;overflow:hidden;background:var(--court-dark);color:#fff}
+.court{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.court *{fill:none;stroke:#fff;stroke-width:2;vector-effect:non-scaling-stroke}
+.shuttle{position:absolute;width:30px;height:30px;left:0;top:0;offset-path:path("M 0 0");}
+.hero-in{position:relative}
+.hero-in .tag{display:inline-block;background:var(--shuttle);color:#2a1d00;font-weight:700;padding:4px 14px;border-radius:999px;font-size:.9rem;margin-bottom:22px}
+h1{font-size:clamp(2.6rem,9vw,5.6rem);line-height:1.1;letter-spacing:-.04em;font-weight:800}
+.hero-in p.lead{margin-top:22px;font-size:clamp(1.05rem,2.6vw,1.3rem);max-width:30em;color:#d9ebe5}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--shuttle);color:#2a1d00}
+.btn.ghost{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+
+/* sections */
+section{padding:96px 0}
+section:not(#home):nth-of-type(even){background:#e9f0ed}
+h2{font-size:clamp(1.7rem,4.5vw,2.4rem);letter-spacing:-.03em;margin-bottom:12px}
+.sub{color:var(--muted);margin-bottom:40px;max-width:36em}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.97rem}
+.facts{display:grid;gap:0;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.facts div{padding:22px 26px;border-bottom:1px solid var(--line)}
+.facts div:nth-child(odd){border-right:1px solid var(--line)}
+.facts div:nth-last-child(-n+2){border-bottom:0}
+.facts dt{font-size:.88rem;color:var(--muted)}
+.facts dd{font-weight:700;font-size:1.1rem}
+.about{display:grid;gap:40px;grid-template-columns:1.1fr 1fr;align-items:start}
+.about p+p{margin-top:14px}
+.todo{border-style:dashed;border-color:#9bb3aa;background:transparent}
+.todo .meta{display:block;margin-top:12px;font-size:.88rem;color:var(--court);font-weight:600}
+.steps{list-style:none;border-left:3px solid var(--court);margin-left:8px}
+.steps li{position:relative;padding:0 0 30px 28px}
+.steps li::before{content:"";position:absolute;left:-11px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--shuttle);border:3px solid var(--paper)}
+.steps h3{font-size:1.15rem}
+.steps p{color:var(--muted)}
+.goal{background:var(--ink);color:#fff;border-radius:var(--radius);padding:34px;margin-top:10px}
+.goal p{font-size:clamp(1.1rem,3vw,1.4rem);font-weight:700;line-height:1.5}
+
+footer{padding:36px 0;background:var(--ink);color:#b8c8d2;font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer button{background:transparent;color:#fff;border:1px solid #5d7384;border-radius:999px;padding:8px 18px;font:inherit;cursor:pointer}
+
+@media (max-width:820px){
+  .burger{display:block}
+  nav{position:absolute;top:60px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s}
+  nav.open{max-height:360px}
+  nav ul{flex-direction:column;padding:10px 24px 18px}
+  nav a{padding:13px 14px;font-size:1.05rem}
+  .grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  section{padding:72px 0}
+}
+@media (max-width:480px){.facts{grid-template-columns:1fr}.facts div:nth-child(odd){border-right:0}.facts div:nth-last-child(2){border-bottom:1px solid var(--line)}}
+@media (prefers-reduced-motion:no-preference){
+  .shuttle{offset-path:path("M 0 0 Q 380 -230 760 60");animation:fly 2.6s cubic-bezier(.3,.1,.5,1) .3s both}
+  @keyframes fly{from{offset-distance:0%;opacity:0}10%{opacity:1}to{offset-distance:100%;opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shuttle{display:none}.btn,nav a{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#home">이동현</a>
+    <button class="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" aria-label="주 메뉴">
+      <ul>
+        <li><a href="#home">홈</a></li>
+        <li><a href="#about">자기소개</a></li>
+        <li><a href="#skills">역량</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#goal">진로 목표</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home">
+  <svg class="court" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect x="120" y="60" width="760" height="480"/>
+    <rect x="120" y="105" width="760" height="390"/>
+    <line x1="500" y1="60" x2="500" y2="540"/>
+    <line x1="290" y1="60" x2="290" y2="540"/>
+    <line x1="710" y1="60" x2="710" y2="540"/>
+    <line x1="120" y1="300" x2="290" y2="300"/>
+    <line x1="710" y1="300" x2="880" y2="300"/>
+  </svg>
+  <svg class="shuttle" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="24" r="5" fill="#f2b632"/><path d="M10 21 L5 4 M15 20 L15 2 M20 21 L25 4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+  <div class="wrap hero-in">
+    <span class="tag">레저해양스포츠학과</span>
+    <h1>이동현</h1>
+    <p class="lead">배드민턴 코트 위에서 쌓은 경험을 바탕으로, 선수들의 성장을 돕는 코치가 되려 합니다.</p>
+    <div class="cta">
+      <a class="btn main" href="#about">자기소개 보기</a>
+      <a class="btn ghost" href="#goal">진로 목표 보기</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>자기소개</h2>
+    <p class="sub">전공과 관심 분야를 한눈에 확인할 수 있습니다.</p>
+    <div class="about">
+      <div>
+        <p>안녕하세요, 레저해양스포츠학과에서 공부하고 있는 이동현입니다.</p>
+        <p>배드민턴에 관심을 갖고 꾸준히 운동해 왔으며, 여러 대회에서 입상한 경험이 있습니다. 활동적인 성격을 강점으로 현장에서 몸으로 배우는 일을 좋아합니다.</p>
+        <p>앞으로 배드민턴 코치가 되어 선수들과 함께 성장하는 것이 목표입니다.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>이름</dt><dd>이동현</dd></div>
+        <div><dt>전공</dt><dd>레저해양스포츠학과</dd></div>
+        <div><dt>관심 분야</dt><dd>배드민턴</dd></div>
+        <div><dt>목표</dt><dd>배드민턴 코치</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>역량</h2>
+    <p class="sub">전공 학습과 대회 경험에서 키운 강점입니다.</p>
+    <div class="grid">
+      <article class="card"><h3>활동적인 태도</h3><p>몸을 움직이는 일에 적극적이고, 현장에서 직접 부딪히며 배우는 것을 즐깁니다.</p></article>
+      <article class="card"><h3>대회 경험</h3><p>배드민턴 대회에 여러 차례 출전해 입상했습니다. 경기 상황에서 필요한 집중력과 판단력을 경험했습니다.</p></article>
+      <article class="card"><h3>스포츠 전공 지식</h3><p>레저해양스포츠학과에서 스포츠 활동의 이해와 지도에 필요한 기초를 배우고 있습니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>프로젝트</h2>
+    <p class="sub">대회 입상 등 활동 경험을 정리하는 공간입니다. 대회명, 연도, 성적은 직접 채워 넣어 주세요.</p>
+    <div class="grid">
+      <article class="card todo"><h3>배드민턴 대회 입상 1</h3><p>대회명, 개최 연도, 종목, 입상 성적을 이곳에 적어 주세요.</p><span class="meta">index.html에서 이 카드를 수정하세요</span></article>
+      <article class="card todo"><h3>배드민턴 대회 입상 2</h3><p>대회명, 개최 연도, 종목, 입상 성적을 이곳에 적어 주세요.</p><span class="meta">index.html에서 이 카드를 수정하세요</span></article>
+      <article class="card todo"><h3>배드민턴 대회 입상 3</h3><p>대회명, 개최 연도, 종목, 입상 성적을 이곳에 적어 주세요.</p><span class="meta">index.html에서 이 카드를 수정하세요</span></article>
+    </div>
+  </div>
+</section>
+
+<section id="goal">
+  <div class="wrap">
+    <h2>진로 목표</h2>
+    <p class="sub">배드민턴 코치가 되기 위해 걸어갈 방향입니다.</p>
+    <ol class="steps">
+      <li><h3>지금</h3><p>전공 수업과 꾸준한 훈련으로 기본기와 지도 이론을 쌓습니다.</p></li>
+      <li><h3>다음</h3><p>대회 경험을 이어가며, 경기에서 배운 점을 정리합니다.</p></li>
+      <li><h3>앞으로</h3><p>코치로서 선수 개개인에게 맞는 훈련과 격려를 전합니다.</p></li>
+    </ol>
+    <div class="goal"><p>선수들이 코트 위에서 더 즐겁고 단단하게 성장하도록 돕는 배드민턴 코치가 되겠습니다.</p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 이동현 · 레저해양스포츠학과</span>
+    <button id="save" type="button">이 페이지 파일로 저장</button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.querySelector('.burger'), nav=document.getElementById('menu');
+  function setMenu(o){nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기')}
+  burger.addEventListener('click',function(){setMenu(!nav.classList.contains('open'))});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var i=secs.indexOf(e.target);
+          links.forEach(function(l,k){l.classList.toggle('active',k===i)});
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){io.observe(s)});
+  }
+
+  document.getElementById('save').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+    a.download='index.html';
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
+  });
+})();
+</script>
+</body>
+</html>
